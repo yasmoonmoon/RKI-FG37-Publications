@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FG-37 Robert Koch Institute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Figtree:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F7F5F2;
+      --ink: #005eb7;
+      --mid: #575756;
+      --accent: #FFFFFF;
+      --card: #FFFFFF;
+      --border: #E4E0DA;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Figtree', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      color: var(--mid);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* Divider */
+    .divider {
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+
+    /* Links */
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .link-item {
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .link-item:nth-child(1) { animation-delay: 0.15s; }
+    .link-item:nth-child(2) { animation-delay: 0.22s; }
+    .link-item:nth-child(3) { animation-delay: 0.29s; }
+    .link-item:nth-child(4) { animation-delay: 0.36s; }
+    .link-item:nth-child(5) { animation-delay: 0.43s; }
+    .link-item:nth-child(6) { animation-delay: 0.50s; }
+
+    .link-item a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .link-item a:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    }
+
+    .link-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .link-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--ink);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .link-text { flex: 1; }
+
+    .link-label {
+      font-size: 0.78rem;
+      color: var(--mid);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .link-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .link-arrow {
+      color: var(--mid);
+      font-size: 1rem;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .link-item a:hover .link-arrow {
+      color: var(--accent);
+      transform: translateX(3px);
+    }
+
+    /* Footer */
+    footer {
+      font-size: 0.7rem;
+      color: var(--border);
+      letter-spacing: 0.08em;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.6s forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="header">
+      <div class="avatar">FG 37</div>
+      <h1 class="brand-name">Publications</h1>
+      <p class="tagline">Robert Koch Institute</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <nav class="links">
+
+      <!-- Burden Paper -->
+      <div class="link-item">
+        <a href="https://yourwebsite.com" target="_blank" rel="noopener">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="link-text">
+            <div class="link-label">Publication</div>
+            <div class="link-title">Burden Paper</div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+      </div>
+
+      <!-- DART Paper -->
+      <div class="link-item">
+        <a href="https://yourwebsite.com" target="_blank" rel="noopener">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="link-text">
+            <div class="link-label">Publication</div>
+            <div class="link-title">DART Paper</div>
+          </div>
+          <span class="link-arrow">→</span>
+        </a>
+      </div>
+
+    </nav>
+
+    <footer>© 2026 Your Brand</footer>
+  </div>
+</body>
+</html>
